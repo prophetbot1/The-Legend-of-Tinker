@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "GPL"
+
+[[mods]]
+modId = "tltmod"
+version = "1.0.0"
+displayName = "TlT Mod"
+authors = "fg"
+description = '''TlT Mod.'''
+
+[[dependencies.tltmod]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.tltmod]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.21)"
+ordering = "AFTER"
+side = "BOTH"
+
