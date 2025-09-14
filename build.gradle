@@ -7,10 +7,10 @@ plugins {
 }
 
 version = "1.0.1"
-group = "com.mogumogumo.mushroomism"
+group = "com.fg.tltmod"
 
 base {
-    archivesName = 'mushroomism'
+    archivesName = 'tltmod'
 }
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
@@ -76,7 +76,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                "mushroomism" {
+                "tltmod" {
                     source sourceSets.main
                 }
             }
@@ -84,11 +84,11 @@ minecraft {
 
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', "mushroomism"
+            property 'forge.enabledGameTestNamespaces', "tltmod"
         }
 
         server {
-            property 'forge.enabledGameTestNamespaces', "mushroomism"
+            property 'forge.enabledGameTestNamespaces', "tltmod"
             args '--nogui'
         }
 
@@ -96,7 +96,7 @@ minecraft {
         // By default, the server will crash when no gametests are provided.
         // The gametest system is also enabled by default for other run configs under the /test command.
         gameTestServer {
-            property 'forge.enabledGameTestNamespaces', "mushroomism"
+            property 'forge.enabledGameTestNamespaces', "tltmod"
         }
 
         data {
@@ -104,7 +104,7 @@ minecraft {
             workingDirectory project.file('run-data')
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', "mushroomism", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', "tltmod", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
 }
@@ -160,12 +160,12 @@ tasks.named('processResources', ProcessResources).configure {
 tasks.named('jar', Jar).configure {
     manifest {
         attributes([
-                'Specification-Title'     : 'mushroomism',
-                'Specification-Vendor'    : 'mogumogumo',
+                'Specification-Title'     : 'tltmod',
+                'Specification-Vendor'    : 'fg',
                 'Specification-Version'   : '1', // We are version 1 of ourselves
                 'Implementation-Title'    : project.name,
                 'Implementation-Version'  : project.jar.archiveVersion,
-                'Implementation-Vendor'   : 'mogumogumo',
+                'Implementation-Vendor'   : 'fg',
                 'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
